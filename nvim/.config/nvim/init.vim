@@ -14,16 +14,15 @@ Plug 'rstacruz/vim-closer'
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Snippet support
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+" Snippets
+Plug 'honza/vim-snippets'
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', {
+      \ 'do': 'npm install && npm run compile' }
 
 " Finder search
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-" quick marking files
-Plug 'ThePrimeagen/harpoon'
 " === Javascript Plugins === "
 " Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
@@ -62,7 +61,7 @@ Plug 'tomlion/vim-solidity'
 Plug 'preservim/nerdcommenter'
 
 " Colorscheme
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
@@ -157,6 +156,13 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
+" remap global file marks to left lowercase row
+" marks can be set with :ma A,E,D,F
+nnoremap 'a 'A
+nnoremap 's 'S
+nnoremap 'd 'D
+nnoremap 'f 'F
+
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
 " ============================================================================ "
@@ -187,13 +193,13 @@ nnoremap Y y$
 " ============================================================================ "
 
 " set Theme
-colorscheme dracula
+colorscheme gruvbox
 
 " Enable true color support
 set termguicolors
 
 " Vim airline theme
-"let g:airline_theme='space'
+let g:airline_theme='gruvbox'
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
