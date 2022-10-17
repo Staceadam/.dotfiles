@@ -1,31 +1,23 @@
 {
 	"suggest.echodocSupport": true,
 	"suggest.maxCompleteItemCount": 20,
-	"prettier.useTabs": true,
 	"prettier.singleQuote": true,
 	"prettier.bracketSpacing": true,
 	"prettier.jsxBracketSameLine": true,
 	"prettier.arrowParens": "always",
+	"prettier.printWidth": 120,
 	"prettier.semi": false,
 	"prettier.trailingComma": "none",
-	"coc.preferences.formatOnSaveFiletypes": [
-		"javascript",
-		"typescript",
-		"typescriptreact",
-		"json",
-		"javascriptreact",
-		"typescript.tsx",
-		"graphql",
-		"gql"
-	],
+	"prettier.useTabs": true,
 	"diagnostic.errorSign": "•",
 	"diagnostic.warningSign": "•",
 	"diagnostic.infoSign": "•",
+	"git.addGBlameToVirtualText": true,
 	"languageserver": {
 		"graphql": {
 			"command": "graphql-lsp",
-			"args": ["server", "-m", "stream", "-c", ".graphqlrc.yml"],
-			"filetypes": ["graphql"]
+			"args": ["server", "-m", "stream"],
+			"filetypes": ["typescript", "typescriptreact", "graphql"]
 		}
 	}
 }

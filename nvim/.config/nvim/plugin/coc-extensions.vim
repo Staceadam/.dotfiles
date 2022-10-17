@@ -1,20 +1,12 @@
-" probably need to install this as well as having it in the plugins...
-" https://github.com/dsznajder/vscode-react-javascript-snippets
 let g:coc_global_extensions = [
             \ 'coc-eslint',
             \ 'coc-json',
             \ 'coc-marketplace',
             \ 'coc-prettier',
             \ 'coc-snippets',
-            \ 'coc-tsserver',
-            \ 'https://github.com/dsznajder/vscode-react-javascript-snippets'
+            \ 'coc-tsserver'
             \ ]
 
-" load react snippets for ts and js files
-"autocmd FileType javascript,javascriptreact,typescript,typescriptreact
-  "\ UltiSnipsAddFiletypes javascript.javascriptreact.typescript.typescriptreact
-
-" snippet tab completion
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
 
@@ -34,12 +26,12 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#pum#visible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ CheckBackSpace() ? "\<TAB>" :
       \ coc#refresh()
 
-function! s:check_back_space() abort
+function! CheckBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction

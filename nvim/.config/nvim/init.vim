@@ -9,15 +9,19 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'ntpeters/vim-better-whitespace'
 
 " auto-close plugin
-Plug 'rstacruz/vim-closer'
+"Plug 'rstacruz/vim-closer'
 
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Graphql
+Plug 'jparise/vim-graphql'
+
 " Snippets
 Plug 'honza/vim-snippets'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', {
-      \ 'do': 'npm install && npm run compile' }
+	\'do': 'yarn install --frozen-lockfile && yarn compile'
+\}
 
 " Finder search
 Plug 'nvim-lua/plenary.nvim'
